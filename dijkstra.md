@@ -21,7 +21,6 @@ vector<int> dijkstra(int src){
     }
     return dist;
 }
-
+```
 참고: previous 배열은 최소 비용을 찾는데 사용한 간선의 정보를 저장
 ex) previous[u] = v -> u - v 를 연결하는 간선을 사용
-```
