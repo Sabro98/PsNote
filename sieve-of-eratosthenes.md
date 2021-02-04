@@ -1,4 +1,4 @@
-```
+```cpp
 const int MAX = 1000001;
 vector<bool> isPrime(MAX, true);
 vector<int> prime(1, 2);
@@ -13,4 +13,4 @@ for(int i=3; i<=MAX; i++){
     }
 }
 ```
-참고: O(nlglgn)의 시간복잡도로 2~(MAX-1) 사이의 소수들을 모두 구해줌
+참고: *O(nlglgn)*의 시간복잡도로 2~(MAX-1) 사이의 소수들을 모두 구해줌
