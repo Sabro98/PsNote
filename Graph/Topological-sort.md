@@ -21,3 +21,4 @@ vector<int> topological_sort(){
     return ans;
 }
 ```
+O(ElgE)
