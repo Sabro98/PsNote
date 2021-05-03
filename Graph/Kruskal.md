@@ -30,9 +30,9 @@ struct Edge {
 int kruskal(vector<Edge> E) {
     sort(E.begin(), E.end());
     int result = 0, cnt = 0;
-    for (int i = 0; i < E.size(); i++) {
-        if (merge(E[i].u, E[i].w)){
-            result += E[i].w;
+    for (auto e : E) {
+        if (merge(e.u, e.v)){
+            result += e.w;
             if(cnt == N - 1) break;
         }
     }
