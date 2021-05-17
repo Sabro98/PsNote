@@ -10,7 +10,6 @@ vector<int> Bellman_Ford(int src) {
       for (int i = 0; i < N; i++) {
          if (dist[i] != INF) {
             for (const auto& g : G[i]) {
-               dist[g.first] = min(dist[g.first], dist[i] + g.second);
                if(dist[g.first] > dist[i] + g.second){
                    dist[g.first] = dist[i] + g.second;
                    previous[g.first] = i;
