@@ -2,7 +2,7 @@
 vector<int> Bellman_Ford(int src) {
    vector<int> dist(N, INF);
    dist[src] = 0;
-   
+
    int update = N - 1;
 
    //update
@@ -11,6 +11,10 @@ vector<int> Bellman_Ford(int src) {
          if (dist[i] != INF) {
             for (const auto& g : G[i]) {
                dist[g.first] = min(dist[g.first], dist[i] + g.second);
+               if(dist[g.first] > dist[i] + g.second){
+                   dist[g.first] = dist[i] + g.second;
+                   previous[g.first] = i;
+               }
             }
          }
       }
@@ -21,8 +25,9 @@ vector<int> Bellman_Ford(int src) {
       if (dist[i] != INF) {
          for (const auto& g : G[i]) {
             if (dist[g.first] > dist[i] + g.second) {
-               cout << "negative!";
-               exit(0);
+                dist[g.first] > dist[i] + g.second;
+                cout << "negative!";
+                exit(0);
             }
          }
       }
